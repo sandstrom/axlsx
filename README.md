@@ -224,12 +224,14 @@ values.
 related to themes, which axlsx does not implement at this time.
 
 2. Google Docs
-   - Images are known to not work with google docs
-   - border colors do not work
+   - Images are known to not work with Google Docs.
+   - Border colors do not work.
 
 3. Numbers
-   - you must set 'use_shared_strings' to true. This is most
-     conveniently done just before rendering by calling Package.use_shared_strings = true prior to serialization.
+   - Charts do not render.
+   - In Numbers < 3.6.2 you must set `use_shared_strings` to `true`.
+     Easiest is to set it just before rendering, by setting 
+     `Package.use_shared_strings = true` prior to serialization.
 
   ```ruby
   p = Axlsx::Package.new
@@ -240,7 +242,6 @@ related to themes, which axlsx does not implement at this time.
   p.use_shared_strings = true
   p.serialize('simple.xlsx')
   ```
-   - charts do not render
 
 
 #Thanks!
